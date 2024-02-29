@@ -9,6 +9,7 @@ class Run {
      int[] arr = {2,2,0,0,0,1,1,1};   
      int[] ans = t.sortColors(arr);
      for(int i : ans) System.out.println(i);
+  
 
    } 
 }
