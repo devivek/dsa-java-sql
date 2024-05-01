@@ -1,4 +1,4 @@
-package String;
+package Array;
 import java.util.*;
 
 public class TwoSum {
