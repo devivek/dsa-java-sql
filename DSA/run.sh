@@ -9,3 +9,8 @@ java Run
 # delete temp folder
 cd ${root}
 rm -r ${root}/temp
+
+# sync
+git add .
+git commit -m "sync"
+git push origin
