@@ -21,5 +21,20 @@ from customer
 group by customer_id
 having count(distinct product_key) = (select count(distinct product_key) from product);
 
+- https://leetcode.com/problems/employees-whose-manager-left-the-company/submissions/1248175410/?envType=study-plan-v2&envId=top-sql-50
+select employee_id
+from Employees
+where salary < 30000
+and employee_id not in (
+    select e1.employee_id
+    from Employees as e1
+    inner join Employees as e2
+    where e1.manager_id = e2.employee_id
+) 
+and manager_id is not null
+order by employee_id;
+
+
+
 
 
