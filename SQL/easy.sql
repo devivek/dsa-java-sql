@@ -1,8 +1,8 @@
-- https://leetcode.com/problems/invalid-tweets/?envType=study-plan-v2&envId=top-sql-50
+- https://leetcode.com/problems/invalid-tweets/
 select tweet_id from tweets where length(content) > 15
 
 
-- https://leetcode.com/problems/department-top-three-salaries/description/?envType=study-plan-v2&envId=top-sql-50
+- https://leetcode.com/problems/department-top-three-salaries/
 select a.Department, a.Employee, a.Salary
 from
 (
@@ -15,13 +15,13 @@ from
 where a.ranking <= 3
 
 
-- https://leetcode.com/problems/customers-who-bought-all-products/description/?envType=study-plan-v2&envId=top-sql-50
+- https://leetcode.com/problems/customers-who-bought-all-products/
 select customer_id
 from customer
 group by customer_id
 having count(distinct product_key) = (select count(distinct product_key) from product);
 
-- https://leetcode.com/problems/employees-whose-manager-left-the-company/submissions/1248175410/?envType=study-plan-v2&envId=top-sql-50
+- https://leetcode.com/problems/employees-whose-manager-left-the-company/
 select employee_id
 from Employees
 where salary < 30000
