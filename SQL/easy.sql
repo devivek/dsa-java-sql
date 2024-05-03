@@ -21,6 +21,7 @@ from customer
 group by customer_id
 having count(distinct product_key) = (select count(distinct product_key) from product);
 
+
 - https://leetcode.com/problems/employees-whose-manager-left-the-company/
 select employee_id
 from Employees
@@ -35,6 +36,17 @@ and manager_id is not null
 order by employee_id;
 
 
+- https://leetcode.com/problems/exchange-seats/
+select 
+case
+    when id = (select max(id) from seat) and id%2 = 1 then id
+    when id%2 = 1 then id+1
+    when id%2 = 0 then id-1
+end as id, student
+from seat
+order by id;
 
+
+- 
 
 
