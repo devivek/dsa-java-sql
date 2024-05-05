@@ -18,7 +18,7 @@ class FindtheUnion{
             result[i] = elem;
             i++;
         }
-        return result;
+        return Arrays.asList(result);
     }
 
 }
