@@ -25,9 +25,9 @@ public class FindtheUnion{
         int j = 0;
         ArrayList<Integer> result = new ArrayList<Integer>();
         while(i <= a.length-1 && j <= b.length-1){
-            if(result.size() != 0 && result[result.size()-1] == a[i])
+            if(result.size() != 0 && result.get(result.size()-1) == a[i])
                 i++;
-            else if(result.size() != 0 && result[result.size()-1] == b[j])
+            else if(result.size() != 0 && result.get(result.size()-1) == b[j])
                 j++;
             else {
                 if(a[i] < b[j])
@@ -37,13 +37,13 @@ public class FindtheUnion{
             }
         }
         while(i <= a.length-1){
-            if(result.size() != 0 && result[result.size()-1] == a[i])
+            if(result.size() != 0 && result.get(result.size()-1) == a[i])
                 i++;
             else
                 result.add(a[i++]);
         }
         while(j <= b.length-1){
-            if(result.size() != 0 && result[result.size()-1] == b[j])
+            if(result.size() != 0 && result.get(result.size()-1) == b[j])
                 j++;
             else
                 result.add(b[j++]);
