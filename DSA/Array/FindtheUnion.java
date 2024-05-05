@@ -1,7 +1,7 @@
 package Array;
 import java.util.*;
 
-class FindtheUnion{
+public class FindtheUnion{
 
     // HashSet: 
      public static List< Integer > sortedArray(int []a, int []b) {
