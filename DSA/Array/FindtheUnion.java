@@ -1,4 +1,5 @@
 package Array;
+import java.util.*
 
 class FindtheUnion{
 
@@ -11,7 +12,7 @@ class FindtheUnion{
         for (int i: b){
             set.insert(i);
         }
-        int[] result = new int[set.size]
+        int[] result = new int[set.size];
         for (int i: set){
             result.add(i);
         }
