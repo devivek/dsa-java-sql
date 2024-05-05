@@ -12,7 +12,7 @@ class FindtheUnion{
         for (int i: b){
             set.add(i);
         }
-        List<Integer> result = new List<Integer>();
+        ArrayList<Integer> result = new ArrayList<Integer>();
         for (int elem: set){
             result.add(elem);
         }
