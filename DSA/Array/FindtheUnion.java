@@ -25,16 +25,28 @@ public class FindtheUnion{
         int j = 0;
         ArrayList<Integer> result = new ArrayList<Integer>();
         while(i <= a.length-1 && j <= b.length-1){
-            if(a[i] < b[j])
-                result.add(a[i++]);
-            else
-                result.add(b[j++]);
+            if(result.size() != 0 && result[result.size()-1] == a[i])
+                i++;
+            else if(result.size() != 0 && result[result.size()-1] == b[j])
+                j++;
+            else {
+                if(a[i] < b[j])
+                    result.add(a[i++]);
+                else
+                    result.add(b[j++]);
+            }
         }
         while(i <= a.length-1){
-            result.add(a[i++]);
+            if(result.size() != 0 && result[result.size()-1] == a[i])
+                i++;
+            else
+                result.add(a[i++]);
         }
         while(j <= b.length-1){
-            result.add(b[j++]);
+            if(result.size() != 0 && result[result.size()-1] == b[j])
+                j++;
+            else
+                result.add(b[j++]);
         }
         return result;
     }
