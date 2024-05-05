@@ -13,8 +13,10 @@ class FindtheUnion{
             set.add(i);
         }
         int[] result = new int[set.size()];
-        for (int i=0; i<set.size(); i++){
-            result[i] = set[i];
+        int i=0;
+        for (int elem: set){
+            result[i] = elem;
+            i++;
         }
         return result;
     }
