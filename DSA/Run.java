@@ -16,7 +16,7 @@ class Run {
     FindtheUnion f = new FindtheUnion();
     int[] a1 = {0,0,0,1,1,1};
     int[] a2 = {7,9,9};
-    List<Integer> res = f.sortedArray(a1, a2);
+    List<Integer> res = f.sortedArray(a2, a1);
     for(Integer i: res){
       System.out.println(i);
     }
