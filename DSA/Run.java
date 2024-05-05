@@ -17,7 +17,7 @@ class Run {
     int[] a1 = {0,0,0,1,1,1};
     int[] a2 = {7,9,9};
     ArrayList res = f.sortedArray(a1, a2);
-    for(int i: res){
+    for(Integer i: res){
       System.out.println(i);
     }
 
