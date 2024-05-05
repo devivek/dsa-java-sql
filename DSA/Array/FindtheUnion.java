@@ -16,7 +16,7 @@ class FindtheUnion{
         for (int elem: set){
             result.add(elem);
         }
-        return Arrays.asList(result);
+        return result;
     }
 
 }
