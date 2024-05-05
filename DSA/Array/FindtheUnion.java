@@ -19,30 +19,32 @@ public class FindtheUnion{
         return result;
     }
 
-    // Two Pointer
+    // Two Pointer - 
     public static List< Integer > sortedArray2(int []a, int []b) {
         int i = 0;
         int j = 0;
         ArrayList<Integer> result = new ArrayList<Integer>();
-        while(i <= a.length-1 && j <= b.length-1){
-            if(result.size() != 0 && result.get(result.size()-1) == a[i])
-                i++;
-            else if(result.size() != 0 && result.get(result.size()-1) == b[j])
-                j++;
-            else {
-                if(a[i] < b[j])
+        while(i < a.length && j < b.length){
+            if(a[i] < b[j]){
+                if(result.size() != 0 && result.get(result.size()-1) == a[i])
+                    i++;
+                else
                     result.add(a[i++]);
+
+            } else {
+                if(result.size() != 0 && result.get(result.size()-1) == b[j])
+                    j++;
                 else
                     result.add(b[j++]);
             }
         }
-        while(i <= a.length-1){
+        while(i < a.length){
             if(result.size() != 0 && result.get(result.size()-1) == a[i])
                 i++;
             else
                 result.add(a[i++]);
         }
-        while(j <= b.length-1){
+        while(j < b.length){
             if(result.size() != 0 && result.get(result.size()-1) == b[j])
                 j++;
             else
