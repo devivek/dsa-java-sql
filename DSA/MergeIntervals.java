@@ -34,7 +34,7 @@ class MergeIntervals{
         return ans;
     }
 
-
+// Approch 1 [could be coded better]
 
   
 }
