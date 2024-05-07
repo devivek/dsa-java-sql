@@ -1,6 +1,6 @@
 class MergeIntervals{
   
-  // Brute Force - Time: O(n log(n)) + O(n)  and Space: O(n) {for storing the result}
+  // Approch 1 - Time: O(n log(n)) + O(n)  and Space: O(n) {for storing the result}
   public int[][] merge(int[][] intervals) {
         Arrays.sort(intervals, Comparator.comparingInt(a -> a[0]));
         ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
