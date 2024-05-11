@@ -21,6 +21,17 @@ class Run {
       System.out.println(i);
     }
 
+    // Merge Interval
+     System.out.println("Merge Interval");
+     int[][] temp1 = {{1,4}, {0,0}};
+     MergeIntervals merge = new MergeIntervals();
+     int[][] answer = merge.merge(temp1);
+     for(int i=0; i<answer.length;i++){
+        System.out.println(answer[i][0] +" - " + answer[i][1]);
+     }
+
+
+
 
     
   }

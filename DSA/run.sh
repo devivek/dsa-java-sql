@@ -12,5 +12,5 @@ rm -r ${root}/temp
 
 # sync
 git add .
-git commit -m "sync"
+git commit -m "sync-for-date-$(date +"%Y-%m-%d")"
 git push origin

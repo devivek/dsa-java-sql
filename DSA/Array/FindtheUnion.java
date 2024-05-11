@@ -3,7 +3,7 @@ import java.util.*;
 
 public class FindtheUnion{
 
-    // HashSet - Time: O(n1 log(n1 + n2) + n2 log(n1 + n2))  Space: O(n1 + n2) {req for set} + O(n1 + n2) {return the answer}
+    // HashSet - Time: O(n1 log(n1+n2) + n2 log(n1+n2))  Space: O(n1+n2) {req for set} + O(n1+n2) {return the answer}
      public static List< Integer > sortedArray(int []a, int []b) {
         Set<Integer> set = new TreeSet();
         for (int i: a){
@@ -19,7 +19,7 @@ public class FindtheUnion{
         return result;
     }
 
-    // Two Pointer - 
+    // Two Pointer - Time: O(n1 + n2) Space: O(n1 + n2) {return the answer}
     public static List< Integer > sortedArray2(int []a, int []b) {
         int i = 0;
         int j = 0;
@@ -30,7 +30,6 @@ public class FindtheUnion{
                     i++;
                 else
                     result.add(a[i++]);
-
             } else {
                 if(result.size() != 0 && result.get(result.size()-1) == b[j])
                     j++;
