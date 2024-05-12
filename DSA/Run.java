@@ -1,4 +1,5 @@
 import Array.*;
+import Sorting.*;
 import java.util.*;
 
 class Run {
@@ -30,7 +31,11 @@ class Run {
         System.out.println(answer[i][0] +" - " + answer[i][1]);
      }
 
-
+    //SORTING
+    System.out.println("SORTING");
+    BasicSorting bs = new BasicSorting();   
+    int[] ans_2 = t.selectionSort(arr);
+    for(int i : ans_2) System.out.println(i);
 
 
     

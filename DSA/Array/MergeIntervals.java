@@ -29,8 +29,9 @@ public class MergeIntervals{
         return result.toArray(new int[result.size()][2]);
     }
 
+    // Approch 2
     // Numbers are only positive => Traverse and use a Hash to sort the values
-    // Time: 2 * O(N) + 10^4 
+    // Time: 2 * O(N) + Range of N
     public int[][] merge(int[][] intervals) {
         int min = Integer.MAX_VALUE;
         int max = Integer.MIN_VALUE;
