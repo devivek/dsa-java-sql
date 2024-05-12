@@ -36,7 +36,7 @@ class Run {
     System.out.println("SORTING");
     BasicSorting bs = new BasicSorting();   
     System.out.println(Arrays.toString(arr));
-    bs.selectionSort(arr);
+    bs.bubbleSort(arr);
     System.out.println(Arrays.toString(arr));
     
 
