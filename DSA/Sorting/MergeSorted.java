@@ -3,6 +3,7 @@ import java.util.*;
 
 public class MergeSorted{
     // Merge two Sorted Arrays Without Extra Space
+    // Time: O(N log(N)) + O(M log(M)) and Space: O(1)
     public void merge(int[] nums1, int m, int[] nums2, int n) {
         int left = n-1;
         int right = 0;
@@ -18,4 +19,6 @@ public class MergeSorted{
         Arrays.sort(nums2);
     }
 
+
+    // SHELL SORT APPROCH =>
 }

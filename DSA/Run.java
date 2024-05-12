@@ -47,6 +47,12 @@ class Run {
     System.out.println(Arrays.toString(a1));
     System.out.println(Arrays.toString(a2));
 
+    int[] ffgg = {1,3,3};
+    FindMissingRepeating fmr = new FindMissingRepeating();
+    fmr.findTwoElement(ffgg, 3);
+
+    System.out.println("String");
+
     
   }
 
