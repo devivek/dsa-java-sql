@@ -30,6 +30,7 @@ class Run {
      for(int i=0; i<answer.length;i++){
         System.out.println(answer[i][0] +" - " + answer[i][1]);
      }
+     System.out.println("\n");
 
     //SORTING
     System.out.println("SORTING");
