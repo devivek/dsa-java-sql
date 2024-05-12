@@ -35,9 +35,10 @@ class Run {
     //SORTING
     System.out.println("SORTING");
     BasicSorting bs = new BasicSorting();   
-    int[] ans_2 = bs.selectionSort(arr);
     System.out.println(Arrays.toString(arr));
-    System.out.println(Arrays.toString(ans_2));
+    bs.selectionSort(arr);
+    System.out.println(Arrays.toString(arr));
+    
 
 
     
