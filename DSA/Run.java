@@ -16,7 +16,7 @@ class Run {
 
     FindtheUnion f = new FindtheUnion();
     int[] a1 = {0,0,0,1,1,1};
-    int[] a2 = {7,9,9};
+    int[] a2 = {0,7,9,9};
     List<Integer> res = f.sortedArray2(a2, a1);
     for(Integer i: res){
       System.out.println(i);
@@ -36,10 +36,16 @@ class Run {
     System.out.println("SORTING");
     BasicSorting bs = new BasicSorting();   
     System.out.println(Arrays.toString(arr));
-    bs.bubbleSort(arr);
+    bs.mergeSort(arr, 0, 7);
     System.out.println(Arrays.toString(arr));
-    
 
+    System.out.println("MergeSorted");
+    MergeSorted ms = new MergeSorted();
+    System.out.println(Arrays.toString(a1));
+    System.out.println(Arrays.toString(a2));
+    ms.merge(a1, 6, a2, 4);
+    System.out.println(Arrays.toString(a1));
+    System.out.println(Arrays.toString(a2));
 
     
   }
