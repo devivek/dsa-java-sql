@@ -49,7 +49,10 @@ class Run {
 
     int[] ffgg = {1,3,3};
     FindMissingRepeating fmr = new FindMissingRepeating();
-    fmr.findTwoElement(ffgg, 3);
+    int[] res99 = fmr.findTwoElement(numbers, 2017);
+    System.out.println(Arrays.toString(numbers));
+    System.out.println(Arrays.toString(res99));
+    
 
     System.out.println("String");
 

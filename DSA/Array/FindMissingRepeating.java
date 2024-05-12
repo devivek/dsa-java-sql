@@ -1,10 +1,13 @@
 package Array;
+import java.math.BigInteger;
 
+//IMPORTANT
 // returns {repeating, missing}
 public class FindMissingRepeating{
-    // Brute Force: O(N^2) and Constant Space
+    // 1. Brute Force: O(N^2) and Constant Space
 
-    // Hashing => Linear Time and Space Complexity
+    // 2. Hashing
+    // Time: O(N) and Space: O(N)
     int[] findTwoElement2(int arr[], int n) {
         int[] hash = new int[n+1];
         for(int i=0; i<n; i++){
@@ -23,24 +26,40 @@ public class FindMissingRepeating{
         
     }
 
-    // Maths
-    int[] findTwoElement(int arr[], int n) {
+    // 3. Maths [Not recommended to use long, as answer would be wrong for large dataset due to overflow while]
+    public int[] findTwoElement(int arr[], int n) {
         // 1, 2, 3
         // 1, 3, 3
-        int sum = 0;
-        int total = 0;
+        BigInteger square_total = BigInteger.valueOf(0);
+        BigInteger total = BigInteger.valueOf(0);
         for(int i=0; i<n; i++){
-            sum = sum ^ (i+1) ^ arr[i];
-            total = total + arr[i];
+            total = total.add(BigInteger.valueOf(arr[i])) ;
+            square_total = square_total.add( BigInteger.valueOf(arr[i]).multiply(BigInteger.valueOf(arr[i])));
         }
-        int diff = (n*(n+1))/2 - total;
-        if(diff < 0) diff = diff * -1;
-        int repeating = (sum + diff) / 2;
-        int missing = sum - repeating;
-        System.out.println(sum + " "+ diff + " " + repeating + " "+ missing)
-        return new int[]{ repeating, missing};
+        //x-y
+        BigInteger x = BigInteger.valueOf(n).multiply(BigInteger.valueOf(n+1)).divide(BigInteger.valueOf(2));
+        BigInteger diff = x.subtract(total);
+        //x^2-y^2
+        BigInteger y = BigInteger.valueOf(n).multiply(BigInteger.valueOf(n+1)).multiply(BigInteger.valueOf(2*n+1)).divide(BigInteger.valueOf(6));
+        BigInteger square_diff = y.subtract(square_total);
+        // x+y
+        BigInteger sum = square_diff.divide(diff);
+        BigInteger repeating = sum.add(diff).divide(BigInteger.valueOf(2));
+        BigInteger missing = sum.subtract(repeating);
+        return new int[]{ repeating.intValue(), missing.intValue()};
     }
 
+    //4. 
+    // Time: O(N) and Space: O(1)
+    public int[] findTwoElement(int arr[], int n) {
+
+    }
+
+    //5. XOR 
+    // Time: O(N) and Space: O(1)
+    public int[] findTwoElement(int arr[], int n) {
+        
+    }
     
 
 }

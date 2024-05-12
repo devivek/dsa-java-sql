@@ -1,7 +1,7 @@
 package Array;
 import java.util.*;
 
-
+//IMPORTANT
 public class MergeIntervals{
     // Merge all overlapping intervals,
   
