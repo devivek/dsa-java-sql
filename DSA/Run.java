@@ -36,7 +36,7 @@ class Run {
     System.out.println("SORTING");
     BasicSorting bs = new BasicSorting();   
     int[] ans_2 = bs.selectionSort(arr);
-    for(int i : ans_2) System.out.println(i);
+    System.out.println(Arrays.toString(ans_2));
 
 
     
