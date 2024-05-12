@@ -34,7 +34,7 @@ class Run {
     //SORTING
     System.out.println("SORTING");
     BasicSorting bs = new BasicSorting();   
-    int[] ans_2 = t.selectionSort(arr);
+    int[] ans_2 = bs.selectionSort(arr);
     for(int i : ans_2) System.out.println(i);
 
 
