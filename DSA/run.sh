@@ -11,6 +11,13 @@ cd ${root}
 rm -r ${root}/temp
 
 # sync
-git add .
-git commit -m "sync-for-date-$(date +"%Y-%m-%d")"
-git push origin
+
+random_number=$(( (RANDOM % 25) + 1 ))
+echo "Random Number - ${random_number}"
+# Check if the random number is 1
+if [ "$random_number" -eq 1 ]; then
+    # Your code here
+    git add .
+    git commit -m "sync-for-date-$(date +"%Y-%m-%d")"
+    git push origin
+fi
