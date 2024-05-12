@@ -2,7 +2,7 @@ package Sorting;
 public class BasicSorting{
     
     // Selection Sort -> Select the minimum number and replace
-    public void selectionSort(int arr[]){
+    public int[] selectionSort(int arr[]){
         for(int i=0; i<arr.length; i++){
             int min_index = i;
             for(int j=i; j<arr.length; j++){
@@ -12,6 +12,7 @@ public class BasicSorting{
             arr[i] = arr[min_index];
             arr[min_index] = arr[i];
         }    
+        return arr;
 	}
 
 }
