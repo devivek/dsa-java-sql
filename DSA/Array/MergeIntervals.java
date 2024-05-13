@@ -6,7 +6,7 @@ public class MergeIntervals{
     // Merge all overlapping intervals,
   
   // Approch 1
-  //Time: O(n log(n)) + O(n)  and Space: O(n) {for storing the result}
+  // Time: O(n log(n)) + O(n)  and Space: O(n) {for storing the result}
     public int[][] merge2(int[][] intervals) {
         Arrays.sort(intervals, Comparator.comparingInt(a -> a[0]));
         LinkedList<int[]> result = new LinkedList<int[]>();
