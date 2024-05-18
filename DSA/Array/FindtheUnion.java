@@ -1,6 +1,7 @@
 package Array;
 import java.util.*;
 
+// The Union of two arrays can be defined as the common and distinct elements in the two arrays in sorted manner
 public class FindtheUnion{
 
     // HashSet - Time: O(n1 log(n1+n2) + n2 log(n1+n2))  Space: O(n1+n2) {req for set} + O(n1+n2) {return the answer}

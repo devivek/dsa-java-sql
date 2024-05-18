@@ -9,7 +9,7 @@ public class FindMissingRepeating{
 
     // 2. Hashing
     // Time: O(N) and Space: O(N)
-    int[] findTwoElement2(int arr[], int n) {
+    int[] findTwoElement1(int arr[], int n) {
         int[] hash = new int[n+1];
         for(int i=0; i<n; i++){
             hash[arr[i]]++;
@@ -28,7 +28,7 @@ public class FindMissingRepeating{
     }
 
     // 3. Maths [Not recommended to use long, as answer would be wrong for large dataset due to overflow while]
-    public int[] findTwoElement(int arr[], int n) {
+    public int[] findTwoElement2(int arr[], int n) {
         BigInteger square_total = BigInteger.valueOf(0);
         BigInteger total = BigInteger.valueOf(0);
         for(int i=0; i<n; i++){
@@ -54,7 +54,7 @@ public class FindMissingRepeating{
 
     // 4. Using input array as hash itself to find the repeating number.
     // Time: O(N) and Space: O(1)
-    public int[] findTwoElement(int arr[], int n) {
+    public int[] findTwoElement3(int arr[], int n) {
         int xored = 0;
         int repeat = -1;
         for(int i=0; i<n; i++){
