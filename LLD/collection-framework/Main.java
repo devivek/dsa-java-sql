@@ -4,7 +4,6 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello to Java Collection Framework");
 
-
         System.out.println("Iterator");
         // MyGenericList -> Iterator
         MyGenericList<Integer> myGenericList = new MyGenericList();
@@ -71,9 +70,48 @@ public class Main {
         System.out.println(stack1.pop());
 
 
+        // Priority Queue
+        System.out.println("Priority Queue");
 
+        //using class own comparable
+        PriorityQueue<StudentMarks> priorityQueue1 = new PriorityQueue<>();
+        // using compator
+        PriorityQueue<StudentMarks> priorityQueue2 = new PriorityQueue<>(new CustomComparator());
+        // using lambda compator
+        PriorityQueue<StudentMarks> priorityQueue3 = new PriorityQueue<>( (o1,o2) -> {
+            int t1 = o1.getChemistryMarks() + o1.getMathsMarks() + o1.getChemistryMarks();
+            int t2 = o2.getChemistryMarks() + o2.getMathsMarks() + o2.getChemistryMarks();
+            return t2-t1;
+        });
 
+        priorityQueue1.add(new StudentMarks("Vivek", 20, 70, 10));
+        priorityQueue1.add(new StudentMarks("Aman", 70, 70, 100));
+        priorityQueue1.add(new StudentMarks("Raj", 10, 70, 20));
+        priorityQueue1.add(new StudentMarks("Karan", 90, 70, 90));
+        priorityQueue2.add(new StudentMarks("Vivek", 20, 70, 10));
+        priorityQueue2.add(new StudentMarks("Aman", 70, 70, 100));
+        priorityQueue2.add(new StudentMarks("Raj", 10, 70, 20));
+        priorityQueue2.add(new StudentMarks("Karan", 90, 70, 90));
+        priorityQueue3.add(new StudentMarks("Vivek", 20, 70, 10));
+        priorityQueue3.add(new StudentMarks("Aman", 70, 70, 100));
+        priorityQueue3.add(new StudentMarks("Raj", 10, 70, 20));
+        priorityQueue3.add(new StudentMarks("Karan", 90, 70, 90));
 
+        System.out.println(priorityQueue1.poll());
+        System.out.println(priorityQueue2.poll());
+        System.out.println(priorityQueue3.poll());
+
+        // Set
+        System.out.println("Set");
+        Set<Integer> hashSet = new HashSet<>();
+        hashSet.add(10); hashSet.add(10); hashSet.add(100); hashSet.add(20); hashSet.add(1);
+        System.out.println(hashSet);
+        System.out.println(hashSet.contains(20));
+
+        Set<StudentMarks> linkedHashSet = new LinkedHashSet<>();
+        linkedHashSet.add(new StudentMarks("Vivek", 20, 70, 10));
+        linkedHashSet.add(new StudentMarks("Vivek", 20, 70, 10));
+        System.out.println(linkedHashSet);
 
     }
 }
