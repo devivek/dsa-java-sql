@@ -1,11 +1,14 @@
+import student_world.CustomStudentComparator;
+import student_world.StudentMarks;
+import custom_data_structures.MyGenericList;
 import java.util.*;
 
-public class Main {
+public class CollectionFramework {
     public static void main(String[] args) {
         System.out.println("Hello to Java Collection Framework");
 
         System.out.println("Iterator");
-        // MyGenericList -> Iterator
+        // oth.MyGenericList -> Iterator
         MyGenericList<Integer> myGenericList = new MyGenericList();
         myGenericList.add(5);
         myGenericList.add(55);
@@ -76,12 +79,12 @@ public class Main {
         //using class own comparable
         PriorityQueue<StudentMarks> priorityQueue1 = new PriorityQueue<>();
         // using compator
-        PriorityQueue<StudentMarks> priorityQueue2 = new PriorityQueue<>(new CustomComparator());
+        PriorityQueue<StudentMarks> priorityQueue2 = new PriorityQueue<>(new CustomStudentComparator());
         // using lambda compator
-        PriorityQueue<StudentMarks> priorityQueue3 = new PriorityQueue<>( (o1,o2) -> {
+        PriorityQueue<StudentMarks> priorityQueue3 = new PriorityQueue<>( (o1, o2) -> {
             int t1 = o1.getChemistryMarks() + o1.getMathsMarks() + o1.getChemistryMarks();
             int t2 = o2.getChemistryMarks() + o2.getMathsMarks() + o2.getChemistryMarks();
-            return t2-t1;
+            return t1-t2;
         });
 
         priorityQueue1.add(new StudentMarks("Vivek", 20, 70, 10));
@@ -146,6 +149,24 @@ public class Main {
         treeMap.put("vivk", 4);
 
         System.out.println(treeMap);
+
+        // others
+        System.out.println("\n\nOTHERS");
+        String stringArr[] = new String[] {"Vivek", "Aman", "Karanan"};
+        Arrays.sort(stringArr, new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                return o1.length() - o2.length();
+            }
+        });
+        for(String s : stringArr){
+            System.out.print(s + " ");
+        }
+        System.out.println("");
+
+        System.out.println(stringArr.getClass());
+        System.out.println(Arrays.asList(stringArr).getClass());
+
 
     }
 }

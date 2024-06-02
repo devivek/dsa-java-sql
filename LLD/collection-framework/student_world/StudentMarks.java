@@ -1,3 +1,7 @@
+package student_world;
+
+import java.util.*;
+
 public class StudentMarks implements Comparable<StudentMarks> {
     private String name;
     private Integer physicsMarks;
@@ -13,7 +17,7 @@ public class StudentMarks implements Comparable<StudentMarks> {
 
     @Override
     public String toString() {
-        return "StudentMarks{" + "name='" + name + '\'' + ", physicsMarks=" + physicsMarks + ", mathsMarks=" + mathsMarks + ", chemistryMarks=" + chemistryMarks + '}';
+        return "oth.StudentMarks{" + "name='" + name + '\'' + ", physicsMarks=" + physicsMarks + ", mathsMarks=" + mathsMarks + ", chemistryMarks=" + chemistryMarks + '}';
     }
 
     public Integer getPhysicsMarks() {
@@ -75,4 +79,17 @@ public class StudentMarks implements Comparable<StudentMarks> {
         StudentMarks studentMarks = (StudentMarks) obj;
         return studentMarks.chemistryMarks == chemistryMarks && studentMarks.physicsMarks == physicsMarks && studentMarks.mathsMarks == mathsMarks && studentMarks.name == name;
     }
+
+
+    // Without Lambdas
+    public List<String> getFilteredSubjectList(FilterCondition filterCondition){
+        List<String> result = new ArrayList<>();
+        if(filterCondition.filter(this.chemistryMarks)) result.add("chemistry");
+        if(filterCondition.filter(this.physicsMarks)) result.add("physics");
+        if(filterCondition.filter(this.mathsMarks)) result.add("maths");
+        return result;
+    }
+
+    // With Lambdas
+
 }
