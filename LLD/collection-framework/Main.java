@@ -71,7 +71,7 @@ public class Main {
 
 
         // Priority Queue
-        System.out.println("Priority Queue");
+        System.out.println("\n\nPriority Queue");
 
         //using class own comparable
         PriorityQueue<StudentMarks> priorityQueue1 = new PriorityQueue<>();
@@ -102,7 +102,7 @@ public class Main {
         System.out.println(priorityQueue3.poll());
 
         // Set
-        System.out.println("Set");
+        System.out.println("\n\nSet");
         Set<Integer> hashSet = new HashSet<>();
         hashSet.add(10); hashSet.add(10); hashSet.add(100); hashSet.add(20); hashSet.add(1);
         System.out.println(hashSet);
@@ -112,6 +112,40 @@ public class Main {
         linkedHashSet.add(new StudentMarks("Vivek", 20, 70, 10));
         linkedHashSet.add(new StudentMarks("Vivek", 20, 70, 10));
         System.out.println(linkedHashSet);
+
+        NavigableSet<StudentMarks> treeSet = new TreeSet<>();
+        treeSet.add(new StudentMarks("Karan", 10, 60, 60));
+        treeSet.add(new StudentMarks("Vivek", 20, 70, 10));
+        treeSet.add(new StudentMarks("Vivek", 20, 70, 10));
+
+        System.out.println(treeSet);
+        System.out.println(treeSet.higher(new StudentMarks("Vivek", 20, 70, 10)));
+        System.out.println(treeSet.lower(new StudentMarks("Vivek", 20, 70, 10)));
+
+
+        System.out.println("\n\nMap");
+        Map<String, Integer> hashMap = new HashMap<>();
+        hashMap.put("Vivek", 62);
+        hashMap.computeIfPresent("Vivek", (key, value) -> 33);
+        hashMap.computeIfAbsent("Karan", key -> key.length());
+
+        Iterator hashMapEntrySetIterator = hashMap.entrySet().iterator();
+        while (hashMapEntrySetIterator.hasNext()) {
+            Map.Entry<String, Integer> entry = (Map.Entry<String, Integer>) hashMapEntrySetIterator.next();
+            System.out.println(entry.getKey() + " : " + entry.getValue());
+        }
+        for(Map.Entry e: hashMap.entrySet()){
+            System.out.println("Using for loop : " + e.getKey() + " -> " + e.getValue());
+        }
+
+        NavigableMap treeMap = new TreeMap<String, Integer>((a, b) -> {
+            return -1 * (a.length() - b.length());
+        });
+        treeMap.put("karanwat", 999);
+        treeMap.put("hellp", 443);
+        treeMap.put("vivk", 4);
+
+        System.out.println(treeMap);
 
     }
 }
