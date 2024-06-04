@@ -7,6 +7,7 @@ public final class ImmutableStudent {
     private final Integer physicsMarks;
     private final ArrayList<String> subjects;
 
+    // Do not expose or use references from external environment or classes
     public ImmutableStudent(String name, Integer physicsMarks, ArrayList<String> subjects) {
         this.name = name;
         this.physicsMarks = physicsMarks;
@@ -21,7 +22,7 @@ public final class ImmutableStudent {
         return physicsMarks;
     }
 
-    // Do not expose or use references from external environment / classes
+    // Do not expose or use references from external environment or classes
     public ArrayList<String> getSubjects() {
         return new ArrayList<>(subjects);
     }
