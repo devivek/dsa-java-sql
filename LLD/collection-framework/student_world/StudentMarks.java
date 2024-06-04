@@ -1,6 +1,8 @@
 package student_world;
 
 import java.util.*;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 public class StudentMarks implements Comparable<StudentMarks> {
     private String name;
@@ -90,6 +92,13 @@ public class StudentMarks implements Comparable<StudentMarks> {
         return result;
     }
 
-    // With Lambdas
+    // using Predicate - inbuilt functional interface
+    public List<String> getFilteredSubjectListusingPredicate(Predicate filterCondition){
+        List<String> result = new ArrayList<>();
+        if(filterCondition.test(this.chemistryMarks)) result.add("chemistry");
+        if(filterCondition.test(this.physicsMarks)) result.add("physics");
+        if(filterCondition.test(this.mathsMarks)) result.add("maths");
+        return result;
+    }
 
 }
