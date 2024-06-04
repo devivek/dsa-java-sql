@@ -4,7 +4,27 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class BlockingQueue {
+    private ArrayList<Integer> list = new ArrayList<>();
+    int capacity = 0;
+    int MAX_CAPACITY = 10;
 
+    public synchronized void add(int value) throws InterruptedException {
+        while(list.size() == MAX_CAPACITY) this.wait();
+        list.add(value);
+        System.out.println("Added");
+        capacity++;
+        this.notifyAll();
+    }
+
+    public synchronized void remove() throws InterruptedException{
+        while(list.size() == 0) this.wait();
+        list.remove(list.get(list.size()-1));
+        System.out.println("Removed");
+        capacity--;
+        this.notifyAll();
+    }
+
+    // MAIN
     public static void main(String[] args) throws InterruptedException {
         System.out.println("Starting Blocking Queue Opearations");
         BlockingQueue blockingQueue = new BlockingQueue();
@@ -52,23 +72,5 @@ public class BlockingQueue {
         System.out.println("CHECKING BLOCKING QUQUE STATUS -> Capacity " + blockingQueue.capacity);
         System.out.println("Main thread finished");
     }
-    private ArrayList<Integer> list = new ArrayList<>();
-    int capacity = 0;
-    int MAX_CAPACITY = 10;
-
-    public synchronized void add(int value) throws InterruptedException {
-        while(list.size() == MAX_CAPACITY) this.wait();
-        list.add(value);
-        System.out.println("Added");
-        capacity++;
-        this.notifyAll();
-    }
-
-    public synchronized void remove() throws InterruptedException{
-        while(list.size() == 0) this.wait();
-        list.remove(list.get(list.size()-1));
-        System.out.println("Removed");
-        capacity--;
-        this.notifyAll();
-    }
 }
+

@@ -1,6 +1,5 @@
 package concurrent_program;
 
-
 import java.util.Random;
 
 // We can extend Thread or Implement Runnable
@@ -33,6 +32,7 @@ public class ParallelProgram implements Runnable{
         }
     }
 
+    // MAIN
     public static void main(String[] args) throws InterruptedException {
         System.out.println("Hello Main!");
 
@@ -65,4 +65,7 @@ public class ParallelProgram implements Runnable{
 
     }
 
+    static class Constants {
+        public static String name = "Vivek";
+    }
 }
