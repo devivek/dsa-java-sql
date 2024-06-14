@@ -10,7 +10,7 @@ public class MajorityElement{
     // Time:O(N) and Space:O(1) -> Moore's Voting Algorithm
     // Intution: If some element is more than n/2 times, it will not get cancelled.
     public int majorityElement(int[] nums) {
-        int element;
+        int element = 0;
         int count = 0;
 
         for (int num: nums){

@@ -33,7 +33,7 @@ public class BasicSorting{
         return arr;
 	}
 
-    // Insertion Sort => Insert the selected element in the correct position in sorted array
+    // Insertion Sort => Insert the selected element in the correct position in sorted array [Online Algorithm]
     // Time: O(N^2) and Space: O(1)
     public int[] insertionSort(int arr[]){
         for(int i=0; i < arr.length; i++){

@@ -7,22 +7,22 @@ public class ThreeSum {
 
     // Approch-1: Brute Force: O(N^3) * (sort the triplet) * log(no. of unique triplets) Check for each possible pair
     
-    public List<List<Integer>> threeSum(int[] nums) {
-        
-
-        // Approch-2: Same as twoSum with a target -> Could be done in O(N^2) 
-        (1, 2 , 3) (2, -2, 6)
-        
-
-        //-> If we use hash, we can do in O(N)
-
-
-
-
-        
-
-
-    }
+//    public List<List<Integer>> threeSum(int[] nums) {
+//
+//
+//        // Approch-2: Same as twoSum with a target -> Could be done in O(N^2)
+//        //(1, 2 , 3) (2, -2, 6)
+//
+//
+//        //-> If we use hash, we can do in O(N)
+//
+//
+//
+//
+//
+//
+//
+//    }
 
 
     // sort the array -> then use two pointer approch of two sum

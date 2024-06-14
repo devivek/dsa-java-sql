@@ -8,9 +8,9 @@ class SuperiorElements{
     // Brute Force - Time:O(N)
     
     // Optimized
-    public static List<Integer> superiorElements(int []a) {
-        List<Integer> result = List<Integer>();
-        int 
-        
-    }
+//    public static List<Integer> superiorElements(int []a) {
+//        //List<Integer> result = List<Integer>();
+//
+//
+//    }
 }
