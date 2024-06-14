@@ -5,7 +5,7 @@ public class FindElement {
     // Binary Search
         // 1. Define the range for Search;
         // 2. Condition to divide the array in terms of True or False;
-        // 3. Find the Boundary.
+        // 3. Find the Boundary, either maximizing or minimizing the index
     // Time: O(logN) and Space: O(1)
     static public int search(int[] nums, int target) {
         int low = 0;
@@ -19,9 +19,10 @@ public class FindElement {
         return -1;
     }
 
-
     // Find the floor of a number in a sorted distinct array
     // n -> Size of the array
+    // Condition is arr[i] <= x; where i is maximum
+    // 2, 5, 6, 7, 10 => floor(3) => (arr[i] <= x) => T, F, F, F, F => 0 : Maximum index where it is true
     static int findFloor(long[] arr, int n, long x)
     {
         int low = 0;
@@ -31,7 +32,7 @@ public class FindElement {
             int mid = low + (high-low)/2;
             if(arr[mid] <= x) {
                 result = mid;
-                low = mid + 1;
+                low = mid + 1; // we need to find the maximum index where it is true
             }else {
                 high = mid - 1;
             }
@@ -40,7 +41,8 @@ public class FindElement {
     }
 
 
-    // 2, 5, 6, 7, 10 => ceil(4) => (arr[i] >= x) => F, T, T, T, T => 1
+    // Same as Lower Bound -> Smallest Index such that  (arr[i] >= x)
+    // 2, 5, 6, 7, 10 => ceil(4) => (arr[i] >= x) => F, T, T, T, T => 1 : Least index where it is true
     static int findCeil(long[] arr, int n, long x)
     {
         int low = 0;
@@ -50,6 +52,24 @@ public class FindElement {
             int mid = low + (high-low)/2;
             if(arr[mid] >= x) {
                 result = mid;
+                high = mid - 1; // we want to find the least index where it is true
+            }else {
+                low = mid + 1;
+            }
+        }
+        return result;
+    }
+
+    // Upper bound -> Smallest Index such that (arr[i] > x)
+    static int findUpperBound(long[] arr, int n, long x)
+    {
+        int low = 0;
+        int high = n-1;
+        int result = -1;
+        while(low <= high){
+            int mid = low + (high-low)/2;
+            if(arr[mid] > x) {
+                result = mid;
                 high = mid - 1;
             }else {
                 low = mid + 1;
@@ -57,6 +77,7 @@ public class FindElement {
         }
         return result;
     }
+
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5, 6};
         long[] arr_long = {1, 22, 53, 466, 58888, 665666};
