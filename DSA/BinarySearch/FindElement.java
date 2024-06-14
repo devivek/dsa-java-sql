@@ -23,8 +23,7 @@ public class FindElement {
     // n -> Size of the array
     // Condition is arr[i] <= x; where i is maximum
     // 2, 5, 6, 7, 10 => floor(3) => (arr[i] <= x) => T, F, F, F, F => 0 : Maximum index where it is true
-    static int findFloor(long[] arr, int n, long x)
-    {
+    static int findFloor(long[] arr, int n, long x) {
         int low = 0;
         int high = n-1;
         int result = -1;
@@ -43,8 +42,7 @@ public class FindElement {
 
     // Same as Lower Bound -> Smallest Index such that  (arr[i] >= x)
     // 2, 5, 6, 7, 10 => ceil(4) => (arr[i] >= x) => F, T, T, T, T => 1 : Least index where it is true
-    static int findCeil(long[] arr, int n, long x)
-    {
+    static int findCeil(long[] arr, int n, long x) {
         int low = 0;
         int high = n-1;
         int result = -1;
@@ -61,8 +59,7 @@ public class FindElement {
     }
 
     // Upper bound -> Smallest Index such that (arr[i] > x)
-    static int findUpperBound(long[] arr, int n, long x)
-    {
+    static int findUpperBound(long[] arr, int n, long x) {
         int low = 0;
         int high = n-1;
         int result = -1;
