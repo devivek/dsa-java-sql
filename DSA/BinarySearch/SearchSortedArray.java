@@ -2,7 +2,7 @@ package BinarySearch;
 
 import java.util.Arrays;
 
-public class FindElementSorted {
+public class SearchSortedArray {
 
     // Binary Search : Time: O(logN) and Space: O(1)
         // 1. Define the range for Search;
@@ -117,16 +117,16 @@ public class FindElementSorted {
         long[] arr_long = {1, 22, 53, 466, 58888, 665666};
         int target = 44;
         System.out.println("Binary Search");
-        System.out.println(FindElementSorted.search(arr, target));
+        System.out.println(SearchSortedArray.search(arr, target));
         System.out.println("Floor");
-        int floor_index = FindElementSorted.findFloor(arr_long, 6, 50);
+        int floor_index = SearchSortedArray.findFloor(arr_long, 6, 50);
         System.out.println(floor_index == -1 ? -1 : arr_long[floor_index]);
         System.out.println("Ceil");
-        int ceil_index = FindElementSorted.findCeil(arr_long, 6, 50);
+        int ceil_index = SearchSortedArray.findCeil(arr_long, 6, 50);
         System.out.println(ceil_index == -1 ? -1 : arr_long[ceil_index]);
 
         int[] arr_long_2 = {1, 22, 22, 22, 45, 66};
         System.out.println("searchRange");
-        System.out.println(Arrays.toString(FindElementSorted.searchRange(arr_long_2, 22)));
+        System.out.println(Arrays.toString(SearchSortedArray.searchRange(arr_long_2, 22)));
     }
 }
