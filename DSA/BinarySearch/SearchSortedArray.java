@@ -3,6 +3,8 @@ package BinarySearch;
 import java.util.Arrays;
 
 public class SearchSortedArray {
+    // The primary objective of the Binary Search algorithm is to efficiently determine the appropriate half to eliminate, thereby reducing the search space by half.
+    // It does this by determining a specific condition that ensures that the target is not present in that half.
 
     // Binary Search : Time: O(logN) and Space: O(1)
         // 1. Define the range for Search;
