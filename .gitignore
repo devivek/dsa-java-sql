@@ -29,3 +29,6 @@ replay_pid*
 *.iml
 *.iws
 out/
+DSA/out/
+LLD/out/
+SQL/out/
