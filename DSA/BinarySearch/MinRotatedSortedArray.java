@@ -3,7 +3,8 @@ package BinarySearch;
 public class MinRotatedSortedArray {
 
     // Approach-1 [distinct elements]
-    // Find the pivot point and the just compare the elements
+    // Find the pivot point
+    // Min Element Index will denote the number of rotation
     public static int findPivot(int[] nums){
         int low = 0;
         int high = nums.length-1;

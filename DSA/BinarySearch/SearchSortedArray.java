@@ -8,7 +8,7 @@ public class SearchSortedArray {
 
     // Binary Search : Time: O(logN) and Space: O(1)
         // 1. Define the range for Search;
-        // 2. Condition to divide the array in terms of True or False;
+        // 2. Condition to divide the array in terms of True or False; Select one part and discard the other
         // 3. Find the Boundary, either maximizing or minimizing the index
     static public int search(int[] nums, int target) {
         int low = 0;

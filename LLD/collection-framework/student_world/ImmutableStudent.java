@@ -1,6 +1,7 @@
 package student_world;
 
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 public final class ImmutableStudent {
     private final String name;
