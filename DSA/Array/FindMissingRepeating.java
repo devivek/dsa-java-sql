@@ -28,6 +28,9 @@ public class FindMissingRepeating{
     }
 
     // 3. Maths [Not recommended to use long, as answer would be wrong for large dataset due to overflow while]
+    // Total = Sigma(n) - x + y
+    // Square Total = Sigma(n^2) - x^2 + y^2
+    // Solve the two equation to get the answer
     public int[] findTwoElement2(int arr[], int n) {
         BigInteger square_total = BigInteger.valueOf(0);
         BigInteger total = BigInteger.valueOf(0);
