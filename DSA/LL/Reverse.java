@@ -1,6 +1,6 @@
 package LL;
 
-public class ReverseLL {
+public class Reverse {
     // [1 -> 2 -> 3 -> null_1] => [3 -> 2 -> 1 -> null_2]
     // [1 -> 2 -> 3 -> null ] => [ 1 <- 2   3]
 
