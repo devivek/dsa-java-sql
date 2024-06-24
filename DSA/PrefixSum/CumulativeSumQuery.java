@@ -1,7 +1,9 @@
 package PrefixSum;
 import java.util.*;
 public class CumulativeSumQuery {
-
+    // PREFIX SUM
+    // Static Problems Only: Build some meta-data by running once on the data and then answer the query
+    // Applications: Range Sum, XOR, Product, frequency count
     // Brute force will be of time complexity O(Q*N)
 
     // Prefix Sum : Time - O(Q*N) and Space O(N)
