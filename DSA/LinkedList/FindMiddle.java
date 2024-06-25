@@ -1,4 +1,4 @@
-package LL;
+package LinkedList;
 
 public class FindMiddle {
 

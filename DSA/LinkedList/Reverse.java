@@ -1,4 +1,4 @@
-package LL;
+package LinkedList;
 
 public class Reverse {
     // [1 -> 2 -> 3 -> null_1] => [3 -> 2 -> 1 -> null_2]
