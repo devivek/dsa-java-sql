@@ -48,20 +48,6 @@ class Run {
 
 
 
-    System.out.println("\n");
-    //SORTING
-    System.out.println("SORTING");
-
-    BasicSorting bs = new BasicSorting();   
-    System.out.println(Arrays.toString(arr));
-    bs.mergeSort(arr, 0, 7);
-    System.out.println(Arrays.toString(arr));
-
-
-
-
-
-
 
     System.out.println("\n");
     //STRING
