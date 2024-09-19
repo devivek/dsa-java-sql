@@ -80,4 +80,13 @@ public class BasicSorting{
 
     // Quick Sort
 
+    public static void main(String[] args) {
+        System.out.println("SORTING");
+        int[] arr = {5,4,3,2,1,0,9,8};
+        BasicSorting bs = new BasicSorting();
+        System.out.println(Arrays.toString(arr));
+        bs.mergeSort(arr, 0, 7);
+        System.out.println(Arrays.toString(arr));
+    }
+
 }
