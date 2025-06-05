@@ -3,6 +3,7 @@
 
 
 - https://leetcode.com/problems/department-top-three-salaries/
+
     select a.Department, a.Employee, a.Salary
     from
     (
