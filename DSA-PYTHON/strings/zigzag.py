@@ -1,5 +1,6 @@
 # Problem : https://leetcode.com/problems/zigzag-conversion/
 # Difficulty: Medium
+# Company Tags : Flipkart
 
 class Solution:
     
@@ -31,6 +32,8 @@ class Solution:
     
     # Approach 2
         # use list of list
+        # time : O(N)
+        # space : O(N)
     def convert2(self, s: str, numRows: int) -> str:
         if(numRows == 1 or numRows >= len(s)):
             return s

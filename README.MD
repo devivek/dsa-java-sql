@@ -6,3 +6,5 @@ This is a **public repository** created to help you learn and explore **Data Str
 
 
 Happy coding! 🚀
+
+# next problem : lexicographically smallest path from leaf to root node 
