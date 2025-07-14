@@ -7,21 +7,35 @@
 # 58 = (2^3 + 2^1 + 2^0) * 5 + 3
 # 58 = [(2^3 * 5) + (2^1 * 5) + (2^0 * 5)] + 3
 
-class Solution:
-    def divide(self, dividend: int, divisor: int) -> int:
-        isPositive: bool = (dividend<0) == (divisor<0)
-        dividend = abs(dividend)
-        divisor = abs(divisor)
-        
-        if divisor > dividend:
-            return 0
-        if divisor == dividend:
-            return 1 if isPositive else -1
-        if divisor == 1:
-            return dividend if isPositive else -1 * dividend
-        
-        i = 0
-        while (divisor << (i+1)) < dividend:
-            i += 1
-        result = 2**i + self.divide(dividend - (divisor << i), divisor)
-        return result if isPositive else -1 * result
+class Solution {
+    public int divide(int dividend, int divisor) {
+         // Handle overflow case
+        if (dividend == Integer.MIN_VALUE && divisor == -1) {
+            return Integer.MAX_VALUE;
+        }
+
+        // Determine the sign of the result
+        boolean isPositive = (dividend < 0) == (divisor < 0);
+
+        // Work with absolute values
+        long absDividend = Math.abs((long) dividend);
+        long absDivisor = Math.abs((long) divisor);
+
+        // Initialize result
+        int result = 0;
+
+        // Perform division using bit manipulation
+        while (absDividend >= absDivisor) {
+            int shift = 0;
+            while (absDividend >= (absDivisor << shift)) {
+                shift++;
+            }
+            shift--; // Go back one step since the last shift exceeded absDividend
+            result += (1 << shift);
+            absDividend -= (absDivisor << shift);
+        }
+
+        // Return the result with the correct sign
+        return isPositive ? result : -result;
+    }
+}
